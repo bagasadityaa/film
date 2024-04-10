@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 
-const VideoPlayer = ({ src }) => {
+const VideoPlayer = ({ src, poster }) => {
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [showPoster, setShowPoster] = useState(true);
@@ -53,7 +53,7 @@ const VideoPlayer = ({ src }) => {
         {/* Video */}
         {showPoster && (
           <img
-            src="cover.svg" // Ganti dengan URL poster Anda
+            src={poster} // Ganti dengan URL poster Anda
             alt="Video Poster"
             className="w-full h-full block"
             onClick={() => {
@@ -72,18 +72,19 @@ const VideoPlayer = ({ src }) => {
           className={`w-full h-full ${showPoster ? "hidden" : "block"}`}
         ></video>
 
-        <div className="justify-start lg:block md:block hidden md:absolute lg:absolute left-14 top-1/2 lg:w-96 sm:mx-2">
+        <div className="lg:justify-start lg:w-96  w-full lg:left-14 md:left-14 md:w-80 md:mt-3  absolute lg:top-1/2 md:top-1/2 text-center ">
           <div className=" text-color-primary ">
-            <h1 className="lg:text-3xl md:text-lg my-1 text-start font-bold">
+            <h1 className="lg:text-3xl md:text-lg my-1 lg:text-start md:text-start font-bold  ">
               500 Days of Summer
             </h1>
-            <h3 className="lg:text-lg my-1 md:text-base text-start">
+            <h3 className="lg:text-lg my-1 md:text-base text-start hidden sm:block">
               Romance | 2009 | 2j 4m
             </h3>
-            <p className="lg:text-xl my-1 text-start md:text-lg ">
+            <p className="lg:text-xl my-1 text-start md:text-lg hidden sm:block">
               500 Days of Summer adalah film drama komedi romantis Amerika
               Serikat tahun 2009
             </p>
+
             {/* <button>
               <h1 className="text-2xl font-bold bg-opacity-50 bg-color-secondary pr-44">
                 Tonton Sekarang
