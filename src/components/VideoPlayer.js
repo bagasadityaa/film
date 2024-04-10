@@ -47,7 +47,6 @@ const VideoPlayer = ({ src }) => {
       setIsPlaying(false);
     }
   };
-  const [isHovered, setIsHovered] = useState(false);
   return (
     <div className="w-full flex lg:items-center lg:min-h-screen lg:justify-center">
       <div className="absolute w-full transform ">
@@ -56,7 +55,7 @@ const VideoPlayer = ({ src }) => {
           <img
             src="cover.svg" // Ganti dengan URL poster Anda
             alt="Video Poster"
-            className="w-full h-auto cursor-pointer"
+            className="w-full h-full block"
             onClick={() => {
               videoRef.current.play();
               setIsPlaying(true);
@@ -70,24 +69,26 @@ const VideoPlayer = ({ src }) => {
           controls={false}
           autoPlay // Mulai video secara otomatis
           onClick={togglePlay}
-          className={`w-full ${showPoster ? "hidden" : "block"}`}
+          className={`w-full h-full ${showPoster ? "hidden" : "block"}`}
         ></video>
 
-        <div className="justify-start lg:absolute  left-14 top-1/2 lg:w-96">
-          <div className=" text-color-primary">
-            <h1 className="text-3xl my-1 text-start font-bold">
+        <div className="justify-start lg:block md:block hidden md:absolute lg:absolute left-14 top-1/2 lg:w-96 sm:mx-2">
+          <div className=" text-color-primary ">
+            <h1 className="lg:text-3xl md:text-lg my-1 text-start font-bold">
               500 Days of Summer
             </h1>
-            <h3 className="text-lg my-1 text-start">Romance | 2009 | 2j 4m</h3>
-            <p className="text-xl my-1 text-start  ">
+            <h3 className="lg:text-lg my-1 md:text-base text-start">
+              Romance | 2009 | 2j 4m
+            </h3>
+            <p className="lg:text-xl my-1 text-start md:text-lg ">
               500 Days of Summer adalah film drama komedi romantis Amerika
               Serikat tahun 2009
             </p>
-            <button>
+            {/* <button>
               <h1 className="text-2xl font-bold bg-opacity-50 bg-color-secondary pr-44">
                 Tonton Sekarang
               </h1>
-            </button>
+            </button> */}
           </div>
         </div>
 
