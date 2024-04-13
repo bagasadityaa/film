@@ -59,11 +59,6 @@ const VideoPlayer = ({ src, poster }) => {
               src={poster}
               alt="Video Poster"
               className="w-full lg:h-screen items-center flex"
-              onClick={() => {
-                videoRef.current.play();
-                setIsPlaying(true);
-                setShowPoster(false);
-              }}
             />
           </div>
         )}
