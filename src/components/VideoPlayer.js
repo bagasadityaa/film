@@ -74,7 +74,7 @@ const VideoPlayer = ({ src, poster }) => {
             autoPlay
             muted
             loop
-            onClick={togglePlay}
+            // onClick={togglePlay}
             className={`w-full ${showPoster ? "hidden" : "block"}`}
           ></video>
         </div>
