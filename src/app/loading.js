@@ -1,4 +1,8 @@
-export default function Loading() {
-  // You can add any UI inside Loading, including a Skeleton.
-  return <LoadingSkeleton />;
-}
+const loading = () => {
+  return (
+    <div className="flex justify-center items-center min-h-screen">
+      <div className="loading flex justify-center items-center" />
+    </div>
+  );
+};
+export default loading;
