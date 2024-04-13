@@ -1,4 +1,6 @@
 "use client";
+import Card from "@/components/Card";
+import Header from "@/components/Header";
 import VideoPlayer from "@/components/VideoPlayer";
 import { useState } from "react";
 const Home = () => {
@@ -9,12 +11,15 @@ const Home = () => {
   };
   return (
     <>
-      <div className="relative h-screen">
-        <div className="absolute top-0 left-0 w-full h-full"></div>
-        <div className="relative ">
-          <VideoPlayer poster="cover.jpg" src="video/daysofsummer.mp4" />
+      <section className="relative ">
+        <div className="  w-full ">
+          <VideoPlayer poster="joker.jpg" src="video/joker.mkv" />
         </div>
-      </div>
+      </section>
+      <section>
+        <Header title="Trending" linkHref="#" namaLink="Lihat Semua" />
+        <Card />
+      </section>
     </>
   );
 };
