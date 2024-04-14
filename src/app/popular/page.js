@@ -14,7 +14,7 @@ const Page = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`${baseUrl}/movie/now_playing`, {
+        const response = await axios.get(`${baseUrl}/movie/popular`, {
           headers: {
             accept: "application/json",
             Authorization:
@@ -38,7 +38,7 @@ const Page = () => {
     <div className="mx-4 my-4">
       <div className="flex-row-reverse items-center flex ">
         <h1 className=" w-full text-center lg:text-3xl font-bold text-color-primary sm:p-0 p-2">
-          Sedang Tayang
+          Paling Banyak Ditonton
         </h1>
         {/* <button
           onClick={router.back}

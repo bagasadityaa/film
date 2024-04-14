@@ -54,13 +54,10 @@ const VideoPlayer = ({ src, poster }) => {
   };
 
   return (
-    <Link
-      href="#"
-      className="w-full flex lg:items-center lg:min-h-screen lg:justify-center"
-    >
-      <div className="relative w-full transform">
+    <section className="w-full flex lg:items-center lg:min-h-screen lg:justify-center">
+      <div className=" w-full relative">
         {showPoster && (
-          <div className="relative max-h-screen ">
+          <div className=" max-h-screen ">
             <img
               src={poster}
               alt="Video Poster"
@@ -68,7 +65,7 @@ const VideoPlayer = ({ src, poster }) => {
             />
           </div>
         )}
-        <div className="overflow-hidden">
+        <div className="">
           <video
             ref={videoRef}
             src={src}
@@ -108,7 +105,7 @@ const VideoPlayer = ({ src, poster }) => {
           </div>
         </div>
       </div>
-    </Link>
+    </section>
   );
 };
 

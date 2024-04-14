@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 const Navbar = () => {
   // State untuk mengontrol apakah menu mobile sedang dibuka atau ditutup
@@ -11,15 +12,22 @@ const Navbar = () => {
   };
 
   return (
-    <header
-      className={`bg-transparent fixed w-full ${
-        isMobileMenuOpen ? "flex flex-col" : "flex justify-between"
+    <navbar
+      className={`bg-color-accent fixed w-full p-4    ${
+        isMobileMenuOpen ? "flex flex-col" : ""
       }`}
     >
-      <div className="flex justify-between items-center p-4 space-x-4">
-        <Image src="/animeList.svg" width={286} height={63} />
+      <div className="flex justify-between">
+        <Link href="/" className=" ml-9">
+          <img src="/animeList.svg" className=" " />
+        </Link>
+        <div className="items-center flex bg-color-secondary rounded-lg text-color-primary font-semibold bg-opacity-90 mr-9 px-2">
+          <Link className="mx-4">Home</Link>
+          <Link className="mx-4">Series</Link>
+          <Link className="mx-4">Movie</Link>
+        </div>
         {/* Tombol toggle untuk menu navigasi mobile */}
-        <button className="block md:hidden" onClick={handleToggleMobileMenu}>
+        <button className="md:hidden" onClick={handleToggleMobileMenu}>
           {isMobileMenuOpen ? "Close Menu" : "Open Menu"}
         </button>
       </div>
@@ -39,7 +47,7 @@ const Navbar = () => {
           </a>
         </nav>
       )}
-    </header>
+    </navbar>
   );
 };
 export default Navbar;

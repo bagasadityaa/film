@@ -1,7 +1,7 @@
 "use client";
+import { Back } from "@/components/Back";
 import Card from "@/components/Card";
 import axios from "axios";
-import Image from "next/image";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
@@ -14,7 +14,7 @@ const Page = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`${baseUrl}/movie/now_playing`, {
+        const response = await axios.get(`${baseUrl}/movie/upcoming`, {
           headers: {
             accept: "application/json",
             Authorization:
@@ -36,22 +36,11 @@ const Page = () => {
 
   return (
     <div className="mx-4 my-4">
-      <div className="flex-row-reverse items-center flex ">
+      <div className="flex-row-reverse items-center  ">
         <h1 className=" w-full text-center lg:text-3xl font-bold text-color-primary sm:p-0 p-2">
-          Sedang Tayang
+          Coming Soon
         </h1>
-        {/* <button
-          onClick={router.back}
-          type="button"
-          className="flex lg:p-2 outline outline-color-primary rounded-full"
-        >
-          <Image
-            src="back.svg"
-            width="40"
-            height="40"
-            className="w-8 h-8 lg:w-10 lg:h-10"
-          />
-        </button> */}
+        <Back />
       </div>
       <div className="grid grid-cols-2 my-3 gap-4 md:grid-cols-5 sm:grid-cols-3 mx-3 m-y3">
         {apiData.map((movie, index) => {
