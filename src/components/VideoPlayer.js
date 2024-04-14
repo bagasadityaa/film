@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
 
 const VideoPlayer = ({ src, poster }) => {
@@ -12,6 +13,7 @@ const VideoPlayer = ({ src, poster }) => {
     const handleVideoEnded = () => {
       setIsPlaying(false);
       setShowPoster(true);
+      togglePlay();
     };
 
     // const playVideo = () => {
@@ -50,8 +52,12 @@ const VideoPlayer = ({ src, poster }) => {
       setIsPlaying(false);
     }
   };
+
   return (
-    <div className="w-full flex lg:items-center lg:min-h-screen lg:justify-center">
+    <Link
+      href="#"
+      className="w-full flex lg:items-center lg:min-h-screen lg:justify-center"
+    >
       <div className="relative w-full transform">
         {showPoster && (
           <div className="relative max-h-screen ">
@@ -68,8 +74,6 @@ const VideoPlayer = ({ src, poster }) => {
             src={src}
             autoPlay
             muted
-            loop
-            // onClick={togglePlay}
             className={`w-full ${showPoster ? "hidden" : "block"}`}
           ></video>
         </div>
@@ -104,7 +108,7 @@ const VideoPlayer = ({ src, poster }) => {
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
