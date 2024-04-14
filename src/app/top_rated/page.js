@@ -1,4 +1,5 @@
 "use client";
+import { Back } from "@/components/Back";
 import Card from "@/components/Card";
 import axios from "axios";
 import Image from "next/image";
@@ -36,22 +37,11 @@ const Page = () => {
 
   return (
     <div className="mx-4 my-4">
-      <div className="flex-row-reverse items-center flex ">
-        <h1 className=" w-full text-center lg:text-3xl font-bold text-color-primary sm:p-0 p-2">
-          Rating Tinggi
-        </h1>
-        {/* <button
-          onClick={router.back}
-          type="button"
-          className="flex lg:p-2 outline outline-color-primary rounded-full"
-        >
-          <Image
-            src="back.svg"
-            width="40"
-            height="40"
-            className="w-8 h-8 lg:w-10 lg:h-10"
-          />
-        </button> */}
+      <div className="flex flex-row mx-5  items-center">
+        <Back />
+        <h3 className="text-2xl font-bold text-color-primary p-4">
+          Rating Tertinggi
+        </h3>
       </div>
       <div className="grid grid-cols-2 my-3 gap-4 md:grid-cols-5 sm:grid-cols-3 mx-3 m-y3">
         {apiData.map((movie, index) => {

@@ -36,11 +36,11 @@ const Page = () => {
 
   return (
     <div className="mx-4 my-4">
-      <div className="flex-row-reverse items-center  ">
-        <h1 className=" w-full text-center lg:text-3xl font-bold text-color-primary sm:p-0 p-2">
-          Coming Soon
-        </h1>
+      <div className="flex flex-row mx-5  items-center">
         <Back />
+        <h3 className="text-2xl font-bold text-color-primary p-4">
+          Coming Soon
+        </h3>
       </div>
       <div className="grid grid-cols-2 my-3 gap-4 md:grid-cols-5 sm:grid-cols-3 mx-3 m-y3">
         {apiData.map((movie, index) => {
